@@ -9,15 +9,17 @@ function getComputerChoice(){
 //function 2: playRound which will have 2 params playerSelection and computerSelection. This should return a string declaring the winner and be case-insensitive
 function playRound(playerSelection,computerSelection){
     let player = playerSelection.toLowerCase()
+    player = player.toString();
     let computer = getComputerChoice();
     computer = computer.toLowerCase();
-    if(player == "rock" && computer == "paper" || player == "paper" && computer == "scissors" || player == "scissors" && computer == "rock"){return "player loses"}
+    if(player == "rock" && computer == "paper" || player == "paper" && computer == "scissors" || player == "scissors" && computer == "rock"){return "player loses"}else{return "player wins"}
 }
 
 //function 3: game() which uses playRound and a prompt() for input.
 function game(){
     let choice = prompt("Hello, let's play RPS. Best of 5. Enter your choice here");
+    choice = choice.toString();
     let i = 0;
-    while (i < 5){console.log(playRound(choice));i++}
+    while (i < 5){console.table(i+1,playRound(choice));i++}
 
 }
